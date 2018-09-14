@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Icp</string>
+    <string name="Login">Login</string>
+    <string name="Username">Username</string>
+    <string name="password">password</string>
+    <string name="signin">SIGN IN</string>
+    <string name="logout">LOGOUT</string>
+    <string name="translate">TRANSLATE</string>
+
+
+</resources>
