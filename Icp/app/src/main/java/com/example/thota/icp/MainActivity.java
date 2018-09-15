@@ -18,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
 public void Credentials(View v){
         EditText user = (EditText) findViewById(R.id.Username);
         EditText pass = (EditText) findViewById(R.id.Pass);
-        String username= user.getText().toString();
-        String Password= pass.getText().toString();
+        String username= user.getText().toString();//get the value of text field
+        String Password= pass.getText().toString();//get the value of password
         if(username.equals("aashish") && Password.equals("aashish"))
         {
             Intent intent=new Intent(MainActivity.this,translate.class);
-            startActivity(intent);
+            startActivity(intent);//sends control to translate activity
         }
         else{
             user.setText("");

@@ -29,12 +29,12 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class translate extends AppCompatActivity implements OnItemSelectedListener {
-    String selected;
+    String selected;//language selected from list
     String value;
     String x;
-    TextView result1;
-    HashMap<String, String> language = new HashMap<String, String>();
-    String destinationLang;
+    TextView result1;//text view to display translated language
+    HashMap<String, String> language = new HashMap<String, String>();//used to store language names and related codes
+    String destinationLang;//selected language code
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +46,11 @@ public class translate extends AppCompatActivity implements OnItemSelectedListen
         language.put("Spanish","es");language.put("Chinese","zh");language.put("Marathi","mr");language.put("Punjabi","pa");language.put("Tamil","ta");
         language.put("Telugu","te");language.put("French","fr");language.put("Hindi","hi");language.put("Swedish","sv");language.put("Japanese","ja");
         List<String> options= new ArrayList<String>(language.keySet());
-        Spinner spinner=(Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<String> languageadapter= new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,options);
+        Spinner spinner=(Spinner) findViewById(R.id.spinner);//assign spinner view to the spinner class object
+        ArrayAdapter<String> languageadapter= new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,options);//array adapter is used to convert string values to view objects
         languageadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(languageadapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setAdapter(languageadapter);//fit adapter to spinner
+        spinner.setOnItemSelectedListener(this);//calls onItemSelected method
         result1=(TextView)findViewById(R.id.result);
     }
     @Override
@@ -86,8 +86,8 @@ public class translate extends AppCompatActivity implements OnItemSelectedListen
             public void onResponse(Call call, Response response) throws IOException {
                 String answer = response.body().string();
                 try {
-                    JSONObject reader = new JSONObject(answer);
-                    JSONArray text = reader.getJSONArray("text");
+                    JSONObject reader = new JSONObject(answer);//parse json objects
+                    JSONArray text = reader.getJSONArray("text");//parse json array
 
                         x=text.get(0).toString();
                         Log.d("okHttp", reader.toString());
@@ -96,7 +96,7 @@ public class translate extends AppCompatActivity implements OnItemSelectedListen
                         @Override
                         public void run() {
                             Log.d("xvalue",x);
-                            result1.setText(x);
+                            result1.setText(x);//set the result value to the textview
                         }
                     });
 
