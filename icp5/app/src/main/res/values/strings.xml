@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">icp5</string>
+    <string name="camera">camera</string>
+    <string name="location">Location</string>
+    <string name="takephoto">Take Photo</string>
+    <string name="homepag">Home</string>
+    <string name="google_maps_api_key">AIzaSyBCMf8-E0ri_nx-6vXwreQMFj_E41DblKY</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+</resources>
